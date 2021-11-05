@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getLocation()"> Location in Google Maps</button>
+    <p id="para"></p>
+
+    <script>
+        var ele = document.getElementById("para");
+        function getLocation(){
+            if(navigator.geolocation) //check if the geolocation is avaialable
+            {
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }
+            else
+            {
+                ele.innerHTML="Geolocation not supported in your browser"
+            }
+        }
+
+       function showPosition(pos){
+        
+            var latitude= pos.coords.latitude;
+            var Longitude = pos.coords.longitude;
+
+            ele.innerHTML = "Longitude: " + Longitude + ", <br> Latitude: "+ latitude;
+
+            var url= "http://maps.google.com/maps?q="+ Longitude + "," + Longitude;
+            alert(url);
+            window.open(url,'_blank');
+
+        }
+
+
+        function showError(e)
+        {
+
+            console.log(e);
+            console.log(e.code);
+            switch(e.code)
+            {
+                case e.PERMISSION_DENIED:
+                    ele.innerHTML = "User denied the request";
+                    console.log(e.PERMISSION_DENIED);
+                    break;
+
+
+                    case e.POSITION_UNAVAILABLE:
+                    ele.innerHTML = "location information is unavialable";
+                    break;
+
+
+                    case e.TIMEOUT:
+                    ele.innerHTML = "The request is timed out";
+                    break;
+
+                    default:
+                    ele.innerHTML = "An unknown e occured";    
+            }
+        }
+    </script>
+
+</body>
+</html>

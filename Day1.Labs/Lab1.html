@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #main{
+            width: auto;
+            border: 1px solid black;
+            margin: 10px auto;
+            height: 1000px;
+        }
+        #mainHeader,#mainFooter{
+            background-color: lightgray;
+            padding: 10px;
+
+        }
+
+        #mainHeader>p,#mainFooter>p,#rightAside>p,#leftAside>p{
+            text-align: center;
+            font: bold 12px tahoma;
+            margin: 5px 5px 0 5px;
+        }
+
+        #mainNav{
+            background-color: grey;
+            text-align: center;
+            margin: 5px;
+        }
+
+        li{
+            list-style: none;
+            display: inline-block;
+            margin: 10px;
+            width: 100px;
+            color: white;
+            text-align: center;
+        }
+
+        li:hover{
+            color: chocolate;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        #mainSection{
+            float:right;
+            width: 840px;
+            background-color:grey;
+            text-align: center;
+            height: 500px;
+
+        }
+
+    
+        #leftAside{
+            float: right;
+            width: 250px;
+            background-color: chocolate;
+            border: 5px;
+            height: 500px;
+        }
+
+        #rightAside{
+            float: left;
+            width: 250px;
+            background-color: chocolate;
+            border: 5px;
+            height: 500px;
+        }
+
+        #mainFooter{
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <header id="mainHeader">
+            <p>Header</p>
+        </header>
+
+        <nav id="mainNav">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+
+            </ul>
+
+        </nav>
+        <aside id="leftAside">
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <p>Cuntinutu</p>
+        </aside>
+        
+        <aside id="rightAside">
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+
+            <p>Cuntinutu</p>
+        </aside>
+
+        
+
+        <section id="mainSection">
+            <article>
+                <br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br>
+                <p>Cuntinutu Main</p>
+            </article>
+        </section>
+
+        <footer id="mainFooter">
+            <p> Footer</p>
+        </footer>
+    </div>
+</body>
+</html>
